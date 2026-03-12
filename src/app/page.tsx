@@ -378,33 +378,39 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 py-12 sm:py-16 lg:py-24">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-200 rounded-full opacity-30 blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-amber-200 rounded-full opacity-30 blur-3xl" />
-        </div>
-        <div className="container mx-auto px-4 relative">
+      <section className="relative overflow-hidden py-12 sm:py-16 lg:py-24 min-h-[600px] sm:min-h-[700px]">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero-band.jpg')" }}
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
+        {/* Orange Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-900/40 via-transparent to-amber-900/30" />
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-4 bg-orange-100 text-orange-700 hover:bg-orange-100 px-4 py-1">
+            <Badge className="mb-4 bg-orange-500/90 text-white hover:bg-orange-500 px-4 py-1.5 backdrop-blur-sm">
               <MapPin className="w-3 h-3 mr-1" />
               Микрорайон Яркий, Уфа
             </Badge>
-            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
               Музыкальная школа для детей и взрослых в{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">
                 микрорайоне Яркий
               </span>
             </h1>
-            <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-200 mb-8 max-w-2xl mx-auto drop-shadow">
               Научим петь и играть на инструментах, даже если ребёнок никогда не
               занимался музыкой. Первое пробное занятие —{" "}
-              <span className="font-semibold text-orange-600">бесплатно!</span>
+              <span className="font-semibold text-amber-400">бесплатно!</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
                 onClick={() => openModal()}
-                className="w-full sm:w-auto bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-lg px-8 py-6 shadow-xl shadow-orange-200/50 animate-pulse-glow"
+                className="w-full sm:w-auto bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-lg px-8 py-6 shadow-xl shadow-orange-900/30 animate-pulse-glow"
               >
                 Записаться на пробное занятие
                 <ChevronRight className="ml-2 w-5 h-5" />
@@ -418,24 +424,24 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full border-2 border-orange-200 text-orange-600 hover:bg-orange-50 font-semibold px-8 py-6"
+                  className="w-full border-2 border-white/50 text-white hover:bg-white/10 hover:border-white font-semibold px-8 py-6 backdrop-blur-sm"
                 >
                   <MessageCircle className="mr-2 w-5 h-5" />
                   Написать в WhatsApp
                 </Button>
               </a>
             </div>
-            <div className="mt-8 flex flex-wrap justify-center gap-4 sm:gap-8 text-sm text-gray-500">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-green-500" />
+            <div className="mt-8 flex flex-wrap justify-center gap-4 sm:gap-8 text-sm text-gray-300">
+              <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                <CheckCircle2 className="w-4 h-4 text-green-400" />
                 <span>Бесплатное пробное занятие</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-green-500" />
+              <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                <CheckCircle2 className="w-4 h-4 text-green-400" />
                 <span>Опытные преподаватели</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-green-500" />
+              <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                <CheckCircle2 className="w-4 h-4 text-green-400" />
                 <span>Рядом с домом</span>
               </div>
             </div>
