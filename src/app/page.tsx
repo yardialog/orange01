@@ -596,14 +596,19 @@ export default function HomePage() {
             {TEACHERS.map((teacher, index) => (
               <Card
                 key={index}
-                className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
                 <CardContent className="p-0">
-                  <div className="flex flex-col sm:flex-row items-center p-6 gap-4">
-                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-orange-200 to-amber-200 flex items-center justify-center flex-shrink-0">
-                      <User className="w-12 h-12 text-orange-500" />
+                  <div className="flex flex-col items-center p-6">
+                    <div className="relative w-28 h-28 rounded-full overflow-hidden flex-shrink-0 mb-4 ring-4 ring-orange-100 group-hover:ring-orange-300 transition-all duration-300">
+                      <img
+                        src={teacher.image}
+                        alt={teacher.name}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
                     </div>
-                    <div className="text-center sm:text-left flex-1">
+                    <div className="text-center flex-1">
                       <h3 className="font-display font-bold text-lg text-gray-900 mb-1">
                         {teacher.name}
                       </h3>
@@ -613,7 +618,7 @@ export default function HomePage() {
                       >
                         {teacher.direction}
                       </Badge>
-                      <div className="flex flex-wrap justify-center sm:justify-start gap-3 text-sm text-gray-500">
+                      <div className="flex flex-wrap justify-center gap-3 text-sm text-gray-500">
                         <span className="flex items-center gap-1">
                           <GraduationCap className="w-4 h-4" />
                           {teacher.education}
